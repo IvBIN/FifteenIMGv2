@@ -199,6 +199,11 @@ document.getElementById("shuffle").addEventListener('click', () =>{
             }
         }, 50);
     }
+    setTimeout(() => {
+        update();
+        timerId = setInterval(update,1000);
+    }, 5000);
+
 
 })
 
@@ -279,8 +284,8 @@ containerNode.addEventListener("click", (event) => {
     score +=1;
     headScore.innerText = +score;
 
-    update();
-    timerId = setInterval(update,1000);
+    // update();
+    // timerId = setInterval(update,1000);
 })
 
 
@@ -391,4 +396,9 @@ function addWonClass() {
             game.classList.remove('wonClass');
         }, 1000);
     }, 200);
+}
+
+function UpdateImageUrl {
+    const imageUrl = imgUrl.value;
+    img.setAttribute('src',imageUrl)
 }

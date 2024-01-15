@@ -2,7 +2,7 @@
 /*    !*font-family:Arial sans-serif;*!*/
 /*    font-size: 16px;*/
 /*}*/
-*{
+* {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
@@ -14,6 +14,7 @@
 }
 
 .page {
+    /*width: 100%;*/
     /*display: flex;*/
     /*justify-content: center;*/
     /*max-width: 1200px;*/
@@ -24,7 +25,8 @@
     /*font-size: 16px;*/
     /*z-index: +5;*/
     width: 1000px;
-    text-align: center;
+    /*text-align: center;*/
+    margin: 0 auto;
     /*!*align-items: center;*!*/
     /*align-content: center;*/
     /*background: linear-gradient(180deg, #b0b0d9, #01014DFF);*/
@@ -34,6 +36,7 @@
     /*position: absolute;*/
 
 }
+
 .container {
     display: block;
     max-width: 1000px;
@@ -53,14 +56,17 @@
     background: #9696EFFF;
     align-items: center;
 }
+
 .logo, .profile_img, .menu {
     /*background: none;*/
     background: #9696EFFF;
     align-items: center;
 }
+
 .logo {
     margin-left: 10px;
 }
+
 .profile {
     margin-right: 10px;
 }
@@ -76,10 +82,12 @@
     color: blue;
 
 }
+
 .input_box {
     background: #9696EFFF;
 }
-.scores, .img_load  {
+
+.scores, .img_load {
     font-family: Calibri;
     font-size: 20px;
     font-weight: bold;
@@ -102,16 +110,19 @@
 .leftpart {
     text-align: center;
 }
+
 .infoblock {
     max-width: 280px;
     /*border: 1px solid green;*/
     margin-left: 10px;
 }
+
 .username {
     max-width: 100%;
     display: flex;
     justify-content: center;
 }
+
 .username, .score, .timer {
     font-family: Calibri;
     font-size: 20px;
@@ -120,6 +131,7 @@
     border: 1px solid green;
     width: 100%;
 }
+
 .scoreinfo {
     display: flex;
     justify-content: space-between;
@@ -129,11 +141,13 @@
     align-items: center;
     width: 100%;
 }
+
 .img_result {
     width: 240px;
     max-height: 240px;
     border: 1px solid green;
 }
+
 .gametitle {
     font-family: "Segoe Script";
     font-size: 24px;
@@ -162,11 +176,12 @@
     cursor: pointer;
     padding: 0.5em 1.5em;
 
-    &:hover {
-         background: #9696EFFF;
-         box-shadow: 0 0 20px 3px #04047a;
-         color: black;
-     }
+&
+:hover {
+    background: #9696EFFF;
+    box-shadow: 0 0 20px 3px #04047a;
+    color: black;
+}
 
 }
 
@@ -185,7 +200,7 @@
 /*    font-size: 3rem;*/
 /*    margin-bottom: 1em;*/
 /*}*/
-.gameShuffle, .button_Sh  {
+.gameShuffle, .button_Sh {
     pointer-events: none;
     opacity: 0.5;
 
@@ -198,128 +213,144 @@
     margin-bottom: 4rem;
     position: relative;
     box-shadow: 0 0 20px 3px #04047a;
+}
 
-    .item {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 25%;
-        height: 25%;
-        margin: 0;
-        padding: 0;
-        border: none;
-        /*background: black;*/
-        /*color: white;*/
-        color: #9696EFFF;
-        font-size: 2rem;
-        cursor: pointer;
-        /*box-shadow: inset 1px 1px #9696EFFF;*/
-        transition: transform 0.2s, filter 0.5s;
-
-
-    .itemVal {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 99%;
-        height: 99%;
-        /*margin: 8% ;*/
-        border: 1px solid #04047a;
-        /*box-shadow: inset 0 0 0 2px #04047AFF;*/
-        /*background: black;*/
-        /*background-image: url("/app/images/siberia-nature.jpg");*/
-        /*background-size:auto;*/
-        /*background-position:left up;*/
-    }
-
-    .itemVal_0 {
-        background-image: url("/app/images/siberia-nature.jpg");
-        background-size:auto;
-        /*background-position:left up;*/
-        background-position:0% 0%;
-    }
-    .itemVal_1 {
-        background-image: url("/app/images/siberia-nature.jpg");
-        background-size:auto;
-        /*background-position: center up;*/
-        background-position: 25% 0%;
-    }
-    .itemVal_2 {
-        background-image: url("/app/images/siberia-nature.jpg");
-        background-size:auto;
-        /*background-position: center up;*/
-        background-position: 50% 0%;
-    }
-    .itemVal_3 {
-        background-image: url("/app/images/siberia-nature.jpg");
-        background-size:auto;
-        /*background-position: right up;*/
-        background-position: 75% 0%;
-    }
-    .itemVal_4 {
-        background-image: url("/app/images/siberia-nature.jpg");
-        background-size:auto;
-        background-position: 0% 25%;
-    }
-    .itemVal_5 {
-        background-image: url("/app/images/siberia-nature.jpg");
-        background-size:auto;
-        background-position: 25% 25%;
-    }
-    .itemVal_6 {
-        background-image: url("/app/images/siberia-nature.jpg");
-        background-size:auto;
-        background-position: 50% 25%;
-    }
-    .itemVal_7 {
-        background-image: url("/app/images/siberia-nature.jpg");
-        background-size:auto;
-        background-position: 75% 25%;
-    }
-    .itemVal_8 {
-        background-image: url("/app/images/siberia-nature.jpg");
-        background-size:auto;
-        background-position: 0% 50%;
-    }
-    .itemVal_9 {
-        background-image: url("/app/images/siberia-nature.jpg");
-        background-size:auto;
-        background-position: 25% 50%;
-    }
-    .itemVal_10 {
-        background-image: url("/app/images/siberia-nature.jpg");
-        background-size:auto;
-        background-position: 50% 50%;
-    }
-    .itemVal_11 {
-        background-image: url("/app/images/siberia-nature.jpg");
-        background-size:auto;
-        background-position: 75% 50%;
-    }
-    .itemVal_12 {
-        background-image: url("/app/images/siberia-nature.jpg");
-        background-size:auto;
-        background-position: 0% 75%;
-    }
-    .itemVal_13 {
-        background-image: url("/app/images/siberia-nature.jpg");
-        background-size:auto;
-        background-position: 25% 75%;
-    }
-    .itemVal_14 {
-        background-image: url("/app/images/siberia-nature.jpg");
-        background-size:auto;
-        background-position: 50% 75%;
-    }
+.item {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 25%;
+    height: 25%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    /*background: black;*/
+    /*color: white;*/
+    color: #9696EFFF;
+    font-size: 2rem;
+    cursor: pointer;
+    /*box-shadow: inset 1px 1px #9696EFFF;*/
+    transition: transform 0.2s, filter 0.5s;
 
 
-    .wonClass {
-        .item {
-            filter: brightness(200%);
+.itemVal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 99%;
+    height: 99%;
+    /*margin: 8% ;*/
+    border: 1px solid #04047a;
+    /*box-shadow: inset 0 0 0 2px #04047AFF;*/
+    /*background: black;*/
+    /*background-image: url("/app/images/siberia-nature.jpg");*/
+    /*background-size:auto;*/
+    /*background-position:left up;*/
+}
 
-        }
+.itemVal_0 {
+    background-image: url("/app/images/siberia-nature.jpg");
+    background-size: auto;
+    /*background-position:left up;*/
+    background-position: 0% 0%;
+}
 
-    }
+.itemVal_1 {
+    background-image: url("/app/images/siberia-nature.jpg");
+    background-size: auto;
+    /*background-position: center up;*/
+    background-position: 25% 0%;
+}
+
+.itemVal_2 {
+    background-image: url("/app/images/siberia-nature.jpg");
+    background-size: auto;
+    /*background-position: center up;*/
+    background-position: 50% 0%;
+}
+
+.itemVal_3 {
+    background-image: url("/app/images/siberia-nature.jpg");
+    background-size: auto;
+    /*background-position: right up;*/
+    background-position: 75% 0%;
+}
+
+.itemVal_4 {
+    background-image: url("/app/images/siberia-nature.jpg");
+    background-size: auto;
+    background-position: 0% 25%;
+}
+
+.itemVal_5 {
+    background-image: url("/app/images/siberia-nature.jpg");
+    background-size: auto;
+    background-position: 25% 25%;
+}
+
+.itemVal_6 {
+    background-image: url("/app/images/siberia-nature.jpg");
+    background-size: auto;
+    background-position: 50% 25%;
+}
+
+.itemVal_7 {
+    background-image: url("/app/images/siberia-nature.jpg");
+    background-size: auto;
+    background-position: 75% 25%;
+}
+
+.itemVal_8 {
+    background-image: url("/app/images/siberia-nature.jpg");
+    background-size: auto;
+    background-position: 0% 50%;
+}
+
+.itemVal_9 {
+    background-image: url("/app/images/siberia-nature.jpg");
+    background-size: auto;
+    background-position: 25% 50%;
+}
+
+.itemVal_10 {
+    background-image: url("/app/images/siberia-nature.jpg");
+    background-size: auto;
+    background-position: 50% 50%;
+}
+
+.itemVal_11 {
+    background-image: url("/app/images/siberia-nature.jpg");
+    background-size: auto;
+    background-position: 75% 50%;
+}
+
+.itemVal_12 {
+    background-image: url("/app/images/siberia-nature.jpg");
+    background-size: auto;
+    background-position: 0% 75%;
+}
+
+.itemVal_13 {
+    background-image: url("/app/images/siberia-nature.jpg");
+    background-size: auto;
+    background-position: 25% 75%;
+}
+
+.itemVal_14 {
+    background-image: url("/app/images/siberia-nature.jpg");
+    background-size: auto;
+    background-position: 50% 75%;
+}
+
+
+.wonClass {
+
+.item {
+    filter: brightness(200%);
+
+}
+
+}
 
 }
 
