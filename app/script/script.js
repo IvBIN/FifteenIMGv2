@@ -41,7 +41,6 @@ file.addEventListener("change", () => {
         // imgBVal.src = img;
     }
 
-
 })
 
 const imgBVal = document.querySelector("#itemV_");
@@ -78,7 +77,9 @@ for (const val in values){
 
 };
 
-
+const userName = document.getElementById("username");
+let nameGamer = prompt("Введите ваше имя:");
+userName.innerText = nameGamer;
 
 
 // document.body.appendChild(game);
