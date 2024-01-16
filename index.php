@@ -43,7 +43,7 @@
                             <label for="picture">Загрузить картинку</label>
                             <input type="file"
                                    name="picture"
-                                   id="field_picture"
+                                   id="file"
                                    class="form-control"
                                    maxlength="24"
                                    placeholder="Загрузите картинку">
@@ -65,7 +65,7 @@
                                 <span class="timer" id="timer"><span class="min">&nbsp;00</span>:<span class="sec">00</span></span>
 
                             </div>
-                            <img class="img_result" src="/app/images/siberia-nature.jpg" alt="result">
+                            <img class="img_result" src="/app/images/siberia-nature.jpg" alt="result" id="img">
                             <span class="gametitle" id="gametitle">Fifteen IMG</span>
                         </div>
                         <button class="shufButton" id="shuffle">Перемешать</button>

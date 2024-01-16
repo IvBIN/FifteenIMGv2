@@ -19,13 +19,40 @@ const values = new Array(16).fill(0).map((item, index) => index +1);
 // page.appendChild(h1);
 // h1.innerText = ' "Пятнашки" (Fifteen)';
 
-const page = document.getElementById("game1");
+// const page = document.getElementById("game1");
 
 // const game_Sh = document.createElement("div");   // Область для фикасции поля при перемешивании
-const game_Sh = document.getElementById("game_Shuffle");   // Область для фикасции поля при перемешивании
+// const game_Sh = document.getElementById("game_Shuffle");   // Область для фикасции поля при перемешивании
 // game_Sh.classList.add("game_Sh");
 // game_Sh.setAttribute("id", "game_Shuffle");
 // page.appendChild(game_Sh);
+
+// ********* Загрузка файла *********
+let img = document.querySelector("#img");
+let file = document.querySelector("#file");
+
+file.addEventListener("change", () => {
+    let fImg = file.files[0];
+    if (fImg) {
+        img.src = URL.createObjectURL(fImg);
+        localStorage.setItem("myImage", img.src);
+
+        // const imgBVal = document.querySelector("#itemV_");
+        // imgBVal.src = img;
+    }
+
+
+})
+
+const imgBVal = document.querySelector("#itemV_");
+// imgBVal.style.backgroundImage = url('app/images/airplane.jpg');
+
+console.log(imgBVal);
+
+
+// ****** Звуковые файлы ********
+let game_audio = new Audio();
+game_audio.src = "app/sound/Silver.mp3";
 
 
 // const game = document.createElement("div");
@@ -39,13 +66,20 @@ for (const val in values){
     // buttonVal.innerText = val;
     buttonVal.classList.add("itemVal");
     buttonVal.classList.add("itemVal_"+val);
+    buttonVal.setAttribute("id","itemV_");
 
     // button.innerText = val;
     button.classList.add("item");
 
     button.setAttribute("data-matrix-id", val);
 
+    // const imgBVal = document.querySelector("#itemV_"+val);
+    // imgBVal.src = img;
+
 };
+
+
+
 
 // document.body.appendChild(game);
 // game.classList.add("game");
@@ -103,7 +137,7 @@ function update() {
     if (minutes === 60 && seconds === 60) {
         clearInterval(timerId);
     }
-    console.log(minutes, seconds);
+    // console.log(minutes, seconds);
 }
 
 
@@ -118,7 +152,7 @@ setPositionItems(matrix);
 
 // console.log(matrix);
 
-//**** Helpers *****
+//****  *****
 function getMatrix(arr) {
     const matrix = [[], [], [], []];
     let y = 0;
@@ -202,7 +236,9 @@ document.getElementById("shuffle").addEventListener('click', () =>{
     setTimeout(() => {
         update();
         timerId = setInterval(update,1000);
+        game_audio.play();
     }, 5000);
+    // game_audio.play();
 
 
 })
@@ -243,15 +279,6 @@ function findValidCoords({blankCoords, matrix, blockedCoords}) {
     return validCoords;
 }
 
-
-
-// function shuffleArray(arr){
-//     return arr
-//         .map(value => ({value, sort: Math.random()}))
-//         .sort((a, b) => a.sort - b.sort)
-//         .map(({value}) => value)
-// }
-
 //3.Перемещение элементов при клике *****************
 
 const blankNumber = 15; //!!!Значение кнопки пустой (Должно быть 16)
@@ -273,10 +300,6 @@ containerNode.addEventListener("click", (event) => {
     const isValid = isValidForSwap(buttonCoords, blankCoords);  //Сравнение координат элементов (возможные к перемещению)
     // console.log(isValid);
 
-    let minutes = 0;
-    let seconds = 0;
-
-
     if (isValid) {
         swap(blankCoords, buttonCoords, matrix);
         setPositionItems(matrix);
@@ -284,8 +307,6 @@ containerNode.addEventListener("click", (event) => {
     score +=1;
     headScore.innerText = +score;
 
-    // update();
-    // timerId = setInterval(update,1000);
 })
 
 
@@ -354,6 +375,7 @@ window.addEventListener("keydown", (event) => {
         case 'right':
             buttonCoords.x -=1;
             break;
+
     }
 
     if (buttonCoords.y >=maxIndexMatrix || buttonCoords.y < 0 ||  // Проверка на валидность координат
@@ -363,10 +385,15 @@ window.addEventListener("keydown", (event) => {
 
     if (event.key.includes('Arrow')) {
         score +=1;
+        headScore.innerText = +score;
+
+        console.log(score);
     }
+
 
     swap(blankCoords, buttonCoords, matrix); // Замена координат
     setPositionItems(matrix);
+
 })
 
 // headScore.innerText = score;
@@ -398,7 +425,7 @@ function addWonClass() {
     }, 200);
 }
 
-function UpdateImageUrl {
-    const imageUrl = imgUrl.value;
-    img.setAttribute('src',imageUrl)
-}
+// function UpdateImageUrl {
+//     const imageUrl = imgUrl.value;
+//     img.setAttribute('src',imageUrl)
+// }
