@@ -250,6 +250,7 @@
 
     .itemVal_0 {
         background-image: url("/app/images/siberia-nature.jpg");
+        /*background-image: "blob:http://fifteeimgv2/3240e9d7-53ef-4274-b3de-4b68039f076c";*/
         background-size: auto;
         /*background-position:left up;*/
         background-position: 0% 0%;

@@ -42,11 +42,11 @@ file.addEventListener("change", () => {
     }
 
 })
-
-const imgBVal = document.querySelector("#itemV_");
+//
+// const imgBVal = document.querySelector(".itemVal_0");
 // imgBVal.style.backgroundImage = url('app/images/airplane.jpg');
-
-console.log(imgBVal);
+//
+// console.log(imgBVal);
 
 
 // ****** Звуковые файлы ********
@@ -77,6 +77,13 @@ for (const val in values){
 
 };
 
+const imgBVal = document.querySelector("#itemV_");
+imgBVal.style.background = img.src;
+
+
+
+console.log(imgBVal);
+
 const userName = document.getElementById("username");
 let nameGamer = prompt("Введите ваше имя:");
 userName.innerText = nameGamer;
@@ -99,7 +106,7 @@ const shufButton = document.getElementById("shuffle");
 
 // shufButton.innerText = "Перемешать (Shuffle)";
 
-//index.js
+
 const gameNode = document.getElementById('game_Shuffle'); //Фиксация поля при перемешивании
 const buttonNode = document.getElementById('shuffle');
 
@@ -395,7 +402,7 @@ window.addEventListener("keydown", (event) => {
     swap(blankCoords, buttonCoords, matrix); // Замена координат
     setPositionItems(matrix);
 
-})
+});
 
 // headScore.innerText = score;
 
@@ -403,7 +410,7 @@ window.addEventListener("keydown", (event) => {
 
 //5.Визуализация выигрыша (победы) ****************
 
-const winFlatArr = new Array(16).fill(0).map((_item, i) => i + 1)
+const winFlatArr = new Array(16).fill(0).map((_item, i) => i + 1);
 // console.log(winFlatArr);
 function isWon(matrix) {
     const flatMatrix = matrix.flat();
