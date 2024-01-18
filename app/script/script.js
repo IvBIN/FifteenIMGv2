@@ -31,17 +31,17 @@ const values = new Array(16).fill(0).map((item, index) => index +1);
 let img = document.querySelector("#img");
 let file = document.querySelector("#file");
 
-file.addEventListener("change", () => {
-    let fImg = file.files[0];
-    if (fImg) {
-        img.src = URL.createObjectURL(fImg);
-        localStorage.setItem("myImage", img.src);
-
-        // const imgBVal = document.querySelector("#itemV_");
-        // imgBVal.src = img;
-    }
-
-})
+// file.addEventListener("change", () => {
+//     let fImg = file.files[0];
+//     if (fImg) {
+//         img.src = URL.createObjectURL(fImg);
+//         localStorage.setItem("myImage", img.src);
+//
+//         // const imgBVal = document.querySelector("#itemV_");
+//         // imgBVal.src = img;
+//     }
+//
+// })
 //
 // const imgBVal = document.querySelector(".itemVal_0");
 // imgBVal.style.backgroundImage = url('app/images/airplane.jpg');
@@ -77,10 +77,29 @@ for (const val in values){
 
 };
 
-const imgBVal = document.querySelector("#itemV_");
-imgBVal.style.background = img.src;
+const imgUrl = document.querySelector("#imgUrl");
+const imgBVal = document.querySelectorAll("#itemV_"); // смена картинки
+const imgNodeVal = Array.from(document.querySelectorAll("#itemV_"))
+// imgBVal.style.background = img.src;
+
+console.log(imgNodeVal);
+
+imgUrl.addEventListener('change', UpdateImageUrl);
+function UpdateImageUrl() {
+    const imageUrl = imgUrl.value;
+    img.setAttribute('src', imageUrl);
+
+    for (const itemV_ in imgNodeVal) {
+        imgBVal.style.backgroundImage = 'url(' + imageUrl + ')';
 
 
+    };
+
+    // for (let i = 0; i < values.length-1; i++) {
+    //     imgBVal.style.backgroundImage = 'url(' + imageUrl + ')';
+    // };
+}
+console.log(img);
 
 console.log(imgBVal);
 
@@ -132,6 +151,7 @@ let timerId;
 let minutes = 0;
 let seconds = 0;
 
+// ******* Таймер ******
 function update() {
     timerMin.innerHTML = minutes < 10 ? "0" + minutes : minutes;
     seconds ++;
@@ -433,7 +453,3 @@ function addWonClass() {
     }, 200);
 }
 
-// function UpdateImageUrl {
-//     const imageUrl = imgUrl.value;
-//     img.setAttribute('src',imageUrl)
-// }

@@ -41,12 +41,18 @@
 <!--                        <span class="img_load">Загрузка картинки</span>-->
                         <div class="input_box">
                             <label for="picture">Загрузить картинку</label>
-                            <input type="file"
+<!--                            <input type="file"-->
+<!--                                   name="picture"-->
+<!--                                   id="file"-->
+<!--                                   class="form-control"-->
+<!--                                   maxlength="24"-->
+<!--                                   placeholder="Загрузите картинку">-->
+                            <input type="text"
                                    name="picture"
-                                   id="file"
+                                   id="imgUrl"
                                    class="form-control"
-                                   maxlength="24"
-                                   placeholder="Загрузите картинку">
+                                   value="/app/images/siberia-nature.jpg"
+                                   placeholder="Загрузите URL картинки">
                         </div>
 
                         <button type="submit" class="scores">Ваши рекорды</button>

@@ -187,7 +187,7 @@
 
 
 .gamepart {
-    border: 1px solid red;
+    /*border: 1px solid red;*/
     width: 640px;
     height: 640px;
     margin-right: 10px;
